@@ -8,7 +8,7 @@ void displayRestaraunt(const Restaraunt &r); // Function prototype for displayRe
                                              // Constant reference parameter to avoid unnecessary copying of the Restaraunt struct.
 struct Restaraunt
 {
-    string name;       // Name of the restaurant
+    string name;        // Name of the restaurant
     string address;     // Address of the restaurant
     double rating;      // Rating out of 5
     int numReviews;     // Number of reviews
@@ -18,13 +18,13 @@ struct Restaraunt
 
 int main()
 {
-    Restaraunt firstRestaraunt = nameRestaraunt();
+    Restaraunt firstRestaraunt = nameRestaraunt(); // Create 4 Restaraunt objects
     Restaraunt secondRestaraunt = nameRestaraunt();
-    Restaraunt thirdRestaraunt = nameRestaraunt(); //I'm seeing how vectors will be useful for the next lab.
+    Restaraunt thirdRestaraunt = nameRestaraunt(); // I'm seeing how vectors will be useful for the next lab.
     Restaraunt fourthRestaraunt = nameRestaraunt();
     displayRestaraunt(firstRestaraunt);
     displayRestaraunt(secondRestaraunt);
-    displayRestaraunt(thirdRestaraunt);
+    displayRestaraunt(thirdRestaraunt); // Display the 4 Restaraunt
     displayRestaraunt(fourthRestaraunt);
     return 0;
 }
@@ -74,18 +74,24 @@ struct Restaraunt nameRestaraunt()
         }
         else
         {
-            cout << "Invalid price range. Please enter non-negative integers with upper price greater than or equal to lower price ." << endl;
+            cout << "Invalid price range. Please enter non-negative integers with"
+                    " upper price greater than or equal to lower price." << endl;
         }
     }
-    cin.ignore(); // Clears input buffer to prevent first member being skipped in next restaraunt object.
+    cin.ignore();          // Clears input buffer to prevent first member being skipped in next restaraunt object.
     return tempRestaraunt; // Return the Restaraunt struct
 }
 
 void displayRestaraunt(const Restaraunt &r)
 { // Moved code used from main into this function.
-    cout << "Restaraunt Name: " << r.name << endl;
-    cout << "Restaraunt Address: " << r.address << endl;
-    cout << "Restaraunt Rating: " << r.rating << "/5" << endl;
-    cout << "Number of Reviews: " << r.numReviews << endl;
+    cout << "-----------------------------" << endl;
+    cout << "Restaraunt Name: " << r.name << " \n"
+         << endl;
+    cout << "Restaraunt Address: " << r.address << " \n"
+         << endl;
+    cout << "Restaraunt Rating: " << r.rating << "/5 \n"
+         << endl;
+    cout << "Number of Reviews: " << r.numReviews << " \n"
+         << endl;
     cout << "Price Range: $" << r.priceRangeLow << " - $" << r.priceRangeHigh << endl;
 }
