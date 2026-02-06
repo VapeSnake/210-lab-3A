@@ -3,8 +3,9 @@
 
 using namespace std;
 
-struct Restaraunt nameRestaraunt(); // Function prototype for nameRestaraunt.
-
+struct Restaraunt nameRestaraunt();          // Function prototype for nameRestaraunt.
+void displayRestaraunt(const Restaraunt &r); // Function prototype for displayRestaraunt.
+                                             // Constant reference parameter to avoid unnecessary copying of the Restaraunt struct.
 struct Restaraunt
 {
     string name;        // Name of the restaurant
@@ -17,12 +18,14 @@ struct Restaraunt
 
 int main()
 {
-    Restaraunt myRestaraunt = nameRestaraunt(); // Create a Restaraunt struct from function.
-    cout << "Restaraunt Name: " << myRestaraunt.name << endl;
-    cout << "Restaraunt Address: " << myRestaraunt.address << endl;
-    cout << "Restaraunt Rating: " << myRestaraunt.rating << "/5" << endl;
-    cout << "Number of Reviews: " << myRestaraunt.numReviews << endl;
-    cout << "Price Range: $" << myRestaraunt.priceRangeLow << " - $" << myRestaraunt.priceRangeHigh << endl;
+    Restaraunt firstRestaraunt = nameRestaraunt();
+    Restaraunt secondRestaraunt = nameRestaraunt();
+    Restaraunt thirdRestaraunt = nameRestaraunt(); //I'm seeing how vectors will be useful for the next lab.
+    Restaraunt fourthRestaraunt = nameRestaraunt();
+    displayRestaraunt(firstRestaraunt);
+    displayRestaraunt(secondRestaraunt);
+    displayRestaraunt(thirdRestaraunt);
+    displayRestaraunt(fourthRestaraunt);
     return 0;
 }
 
@@ -75,4 +78,13 @@ struct Restaraunt nameRestaraunt()
         }
     }
     return tempRestaraunt; // Return the Restaraunt struct
+}
+
+void displayRestaraunt(const Restaraunt &r)
+{ // Moved code used from main into this function.
+    cout << "Restaraunt Name: " << r.name << endl;
+    cout << "Restaraunt Address: " << r.address << endl;
+    cout << "Restaraunt Rating: " << r.rating << "/5" << endl;
+    cout << "Number of Reviews: " << r.numReviews << endl;
+    cout << "Price Range: $" << r.priceRangeLow << " - $" << r.priceRangeHigh << endl;
 }
