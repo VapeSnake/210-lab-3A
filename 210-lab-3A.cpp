@@ -28,6 +28,14 @@ struct Restaraunt nameRestaraunt() { // Creates Restaraunt from user input
     cout << "Enter the address of the restaurant: ";
     getline(cin, tempRestaraunt.address);
     cout << "Enter the rating of the restaurant (0-5): ";
+    while (true) { // Loop to validate rating input
+        cin >> tempRestaraunt.rating;
+        if (tempRestaraunt.rating >= 0 && tempRestaraunt.rating <= 5) {
+            break; // Valid rating, exit loop
+        } else {
+            cout << "Invalid rating. Please enter a value between 0 and 5: ";
+        }
+    }
     cin >> tempRestaraunt.rating;
     cout << "Enter the number of reviews for the restaurant: ";
     cin >> tempRestaraunt.numReviews;
