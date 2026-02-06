@@ -1,6 +1,18 @@
+//COMSC-210|Lab 3A|Noel Mier-Luna
 #include <iostream>
 
 using namespace std;
+
+struct nameRestaraunt(); // Function prototype for nameRestaraunt.
+
+struct Restaraunt {
+    string name; // Name of the restaurant
+    string address; // Address of the restaurant
+    double rating; // Rating out of 5
+    int numReviews; // Number of reviews
+    int priceRangeLow; // Lower bound of price range
+    int priceRangeHigh; // Upper bound of price range
+};
 
 int main() {
     cout << "Hello, World!" << endl;
