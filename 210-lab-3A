@@ -18,3 +18,20 @@ int main() {
     cout << "Hello, World!" << endl;
     return 0;
 }
+
+struct Restaraunt nameRestaraunt() { // Creates Restaraunt from user input
+    Restaraunt tempRestaraunt;        // and returns it to main.
+    cout << "Enter the name of the restaurant: ";
+    getline(cin, tempRestaraunt.name); // Get the restaurant name from user input
+    cout << "Enter the address of the restaurant: ";
+    getline(cin, tempRestaraunt.address); // Get the restaurant address from user input
+    cout << "Enter the rating of the restaurant (0-5): ";
+    cin >> tempRestaraunt.rating; // Get the restaurant rating from user input
+    cout << "Enter the number of reviews for the restaurant: ";
+    cin >> tempRestaraunt.numReviews; // Get the number of reviews from user input
+    cout << "Enter the lower bound of price range: ";
+    cin >> tempRestaraunt.priceRangeLow; // Get the lower bound of price range from user input
+    cout << "Enter the upper bound of price range: ";
+    cin >> tempRestaraunt.priceRangeHigh; // Get the upper bound of price range from user input
+    return tempRestaraunt; // Return the Restaraunt struct
+}
