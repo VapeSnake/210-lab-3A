@@ -8,7 +8,7 @@ void displayRestaraunt(const Restaraunt &r); // Function prototype for displayRe
                                              // Constant reference parameter to avoid unnecessary copying of the Restaraunt struct.
 struct Restaraunt
 {
-    string name;        // Name of the restaurant
+    string name;       // Name of the restaurant
     string address;     // Address of the restaurant
     double rating;      // Rating out of 5
     int numReviews;     // Number of reviews
@@ -77,6 +77,7 @@ struct Restaraunt nameRestaraunt()
             cout << "Invalid price range. Please enter non-negative integers with upper price greater than or equal to lower price ." << endl;
         }
     }
+    cin.ignore(); // Clears input buffer to prevent first member being skipped in next restaraunt object.
     return tempRestaraunt; // Return the Restaraunt struct
 }
 
