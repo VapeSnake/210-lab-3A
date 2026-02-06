@@ -36,6 +36,15 @@ struct Restaraunt nameRestaraunt() { // Creates Restaraunt from user input
             cout << "Invalid rating. Please enter a value between 0 and 5: ";
         }
     }
+    while (true) { // Loop to validate number of reviews input
+        cout << "Enter the number of reviews for the restaurant: ";
+        cin >> tempRestaraunt.numReviews;
+        if (tempRestaraunt.numReviews >= 0) {
+            break; // Valid number of reviews, exit loop
+        } else {
+            cout << "Invalid number of reviews. Please enter a non-negative integer: ";
+        }
+    }
     cin >> tempRestaraunt.rating;
     cout << "Enter the number of reviews for the restaurant: ";
     cin >> tempRestaraunt.numReviews;
